@@ -1,0 +1,1889 @@
+/* /////////////////////////////////////////////////////////////
+/////////////////////////// CALENDAR /////////////////////////////
+///////////////////////////////////////////////////////////// */
+/*
+#cph_main_C002_eventsFrontendCalendar .container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+#cph_main_C002_eventsFrontendCalendar .container-fluid .col-xs-12 {
+	padding-left: 0;
+	padding-right: 0;
+}
+*/
+.sfcalendarWrp { /* margin between nav bar and top of calendar */
+	margin-top: 30px;
+}
+.RadScheduler tr { /* day titles */
+	height: 50px;
+}
+.RadScheduler tr th { /* day title style */
+	font-family: 'Roboto Slab', serif;
+	font-size: 36px;
+	text-transform: uppercase;
+}
+.RadScheduler tr th.rsAllDayHeader { /* day view - day title style */
+	font-size: 18px;
+}
+.RadScheduler .rsSpacerCell, .RadScheduler .rsContent .rsAllDayHeader {
+	padding-top: 5px;
+}
+.RadScheduler_Metro .rsHeader { /* top navigation */
+	border: 1px solid #0e987d;
+	background-color: #0e987d;
+	height: 40px;
+	padding: 5px;
+}
+.RadScheduler .rsHeader .rsToday {
+	font-size: 18px;
+}
+.RadScheduler_Metro .rsHeader h2 { /* month-year */
+	font-size: 28px;
+	text-transform: uppercase;
+	padding-top: 5px;
+	padding-bottom: 30px;
+}
+.RadScheduler_Metro .rsHeader a, .RadScheduler_Metro .rsHeader a:hover, .RadScheduler_Metro .rsHeader a:visited  { /* header links */
+	color: white;
+	text-decoration: none;
+}
+.RadScheduler a.rsDateHeader:hover {
+	text-decoration: none;
+}
+.RadScheduler_Metro .rsHeader ul { /* padding for layout choices */
+	padding-top: 5px;
+}
+.RadScheduler_Metro .rsHeader p { /* padding for arrows and today */
+	padding-top: 5px;
+}
+
+.RadScheduler_Metro .rsHeader ul a {
+	border: 1px solid #0e987d;
+	font-size: 18px;
+}
+.RadScheduler_Metro .rsHeader ul .rsSelected em {
+	border: 1px solid white;
+	font-size: 18px;
+}
+.RadScheduler_Metro a, .RadScheduler_Metro input, .RadScheduler_Metro select, .RadScheduler_Metro textarea {
+	font-family: 'Roboto', sans-serif;
+	color: #bababa;
+}
+.RadScheduler .rsSpacerCell, .RadScheduler .rsVerticalHeaderTable th, .RadScheduler .rsHorizontalHeaderTable th {
+	border-style: none;
+}
+.RadScheduler .rsDateHeader { /* date numbers */
+	font-size: 32px;
+}
+.sfcalendarSidebar { /* calendar chooser */
+	visibility: hidden;
+}
+.RadScheduler_Metro .rsMonthView .rsDateBox {
+	border-bottom: none;
+	background-color: initial;
+	margin-top: 12px;
+	margin-left: 2px;
+}
+.RadScheduler .rsHeader .rsDatePickerActivator {
+	margin: 9px 0 0 5px;
+}
+.rsContentTable td { /* date box */
+	height: 140px;
+}
+.rsDayView .rsContentTable td {
+	height: 50px;
+}
+.RadScheduler .rsAptSimple .rsAptContent { /* event text */
+	font-family: 'Roboto', sans-serif;
+	margin: 0 10px;
+	color: white;
+	font-size: 16px;
+	line-height: 1em;
+}
+.RadScheduler .rsMonthView .rsShowMore { /* more... */
+	font-family: 'Roboto', sans-serif;
+	text-decoration: none;
+	text-align: right;
+	padding-right: 10px;
+	font-size: 16px;
+	color: #184366;
+}
+.rsApt, .rsAptSimple, .rsAptSelected, .rsWrap {
+	height: 24px;
+}
+.RadScheduler_Metro .rsHorizontalHeaderTable th { /* days of week row */
+	background-color: #bababa;
+}
+.RadScheduler_Metro .rsHorizontalHeaderTable { /* days of week text */
+	color: white;
+}
+.RadScheduler_Metro .rsHeader .rsPrevDay, .RadScheduler_Metro .rsHeader .rsPrevDay:hover, .RadScheduler_Metro .rsHeader .rsNextDay, .RadScheduler_Metro .rsHeader .rsNextDay:hover { /* arrow navigation */
+	background-position: 0;
+	margin: 0;
+	background-repeat: no-repeat;
+	background-size: 25px;
+	width: 35px;
+	height: 30px;
+}
+.RadScheduler_Metro .rsHeader .rsPrevDay {
+	background-image: url("https://www.friscoisd.org/images/default-source/about-us/icon-left-white.png?sfvrsn=2");
+}
+.RadScheduler_Metro .rsHeader .rsNextDay {
+	background-image: url("https://www.friscoisd.org/images/default-source/about-us/icon-right-white.png?sfvrsn=2");
+}
+.RadScheduler .rsSpacerCell, .RadScheduler .rsHorizontalHeaderTable th, .RadScheduler .rsVerticalHeaderTable div, .RadScheduler .rsAllDayHeader, .RadScheduler .rsAllDayTable {
+	line-height: 1em;
+}
+.RadScheduler .rsContent .rsVerticalHeaderTable th div {
+	text-align: center;
+	font-weight: 300;
+}
+.RadScheduler .rsAmPm {
+	display: block;
+	font-size: 16px;
+	padding-top: 7px;
+}
+#ctl00_cph_main_C002_eventsFrontendCalendar_ctl00_ctl00_radScheduler_SelectedDateCalendar_wrapper {
+	width: 225px;
+}
+.RadCalendar .rcWeek th {
+	font-size: 21px;
+}
+tr.rcRow {
+	height: 25px;
+}
+h2.sfcalendarEventPreviewTitle {
+	margin: 0 0 10px 0;
+}
+
+/******************************** END OF CALENDAR ******************************/
+
+div#home-alert {
+    padding-top: 1em;
+}
+
+
+.search-submit .search-submit-btn {
+	border-radius: 4px;
+	font-size: 18px;
+	color: white;
+	background-color: #184366;
+}
+
+.carousel-caption {
+	padding: 20px 20px 12.5px;
+	letter-spacing: .025em;
+	background-color: rgba(0,0,0,0.6); /* 11/16/15 */
+}
+.carousel-caption a, .carousel-caption a:link, .carousel-caption a:hover, .carousel-caption a:active, .carousel-caption a:visited {
+	color: white;
+}
+.carousel-indicators {
+	bottom: -8px;
+}
+.caption-desc {
+	width: 90%;
+}
+.caption-desc a::after {
+	font-family: 'fisd';
+	content: " VV";
+	font-size: .67em;
+	letter-spacing: -.25em;
+	padding-left: .5em;
+}
+
+
+
+/* /////////////////////////////////////////////////////////////
+/////////////////////// UNIVERSAL RULES ///////////////////////
+///////////////////////////////////////////////////////////// */
+
+a.back-to-top, .back-to-top, span.icon-up-plain {
+	display: none;
+}
+#MainWrapper .container > .row {
+	background: none;
+}
+.row .row-content {
+	margin-left: 15px;
+	margin-right: 15px;
+	padding-top: 15px;
+	padding-bottom: 40px;
+}
+body {
+	font-weight: 400;
+}
+h1, h2, h3, h4, h5 {
+	font-family: 'Roboto Slab', serif;
+	margin: .75em 0 .5em;
+	font-weight: 400;
+}
+p {
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	line-height: 1.375em;
+	letter-spacing: .025em;
+	margin: 0 0 15px;
+}
+tr, th {
+	font-weight: 400;
+}
+ul {
+	padding: 0;
+	list-style: none;
+}
+a {
+	color: #5ab3c4;
+}
+a, a:hover, a:visited, a:active, a:focus {
+	text-decoration: none;
+}
+a:hover {
+	color: #184366;
+	cursor: pointer;
+}
+
+address {
+	line-height: 1.25em;
+}
+.verticalcenter {
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.table > tbody > tr > td { /*did this to vertically align icon with test in the job dropdown, not sure how it will effect other tables */
+	line-height: 1em;
+}
+.dept-right-col {
+	margin-bottom: 20px;
+}
+.panel-heading, .panel-default > .panel-heading {
+	border-radius: 4px 4px 0 0;
+}
+
+/* BUTTONS ///////////////////////////////////////// */
+
+.btn {
+	box-shadow: none;
+	text-shadow: none;
+	border: none;
+	border-radius: 0;
+	text-transform: uppercase;
+}
+.btn-lg {
+	margin-top: 30px;
+}
+.btn-default {
+	background-image: none;
+	background-color: #bababa;
+}
+.btn-primary {
+	background-image: none;
+	background-color: #184366;
+}
+.btn-primary:hover {
+	color: #184366;
+}
+.btn-success {
+	background-image: none;
+	background-color: #0e987d;
+}
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active {
+	color: #0e987d;
+	background-color: #0e987d;
+}
+
+.btn-info {
+	background-image: none;
+	background-color: #5ab3c4;
+}
+.btn-info:hover {
+	color: #5ab3c4;
+}
+.btn-warning {
+	background-image: none;
+	background-color: #e8b20f;
+}
+.btn-warning:hover {
+	color: #e8b20f;
+}
+ #home-buttons .btn:hover {
+	background-color: #e6e6e6;
+}
+a.btn {
+	color: white;
+}
+.btn-danger {
+	background-image: none;
+	background-color: #e95b37;
+}
+.btn-danger:hover {
+	color: #e95b37;
+}
+
+/* COLORS ///////////////////////////////////////// */
+
+.black {
+	color: #000;
+}
+.blue {
+	color: #5ab3c4;
+}
+.red {
+	color: #e95b37;
+}
+.orange {
+	color: #e8b20f;
+}
+.green {
+	color: #0e987d;
+}
+.blue-dark-nav {
+	color: #184366;
+}
+.blue-dark {
+	color: #184366;
+}
+.grey-light {
+	color: #e6e6e6;
+}
+.grey-med-light {
+	color: #ccc;
+}
+.grey-med-dark {
+	color: #bababa;
+}
+.grey-dark {
+	color: #333;
+}
+.white {
+	color: #fff;
+}
+.white50 {
+	color: rgba(255, 255, 255, 0.5);
+}
+.black50 {
+	color: rgba(0, 0, 0, 0.5);
+}
+.bg-black50 {
+	background-color: rgba(0, 0, 0, 0.25);
+}
+.bg-black {
+	color: #000;
+}
+.bg-blue-dark-nav {
+	background-color: #184366;
+}
+.bg-blue {
+	background-color: #5ab3c4;
+}
+.bg-red {
+	background-color: #e95b37;
+}
+.bg-orange {
+	background-color: #e8b20f;
+}
+.bg-green {
+	background-color: #0e987d;
+}
+.bg-blue-dark {
+	background-color: #184366;
+}
+.bg-grey-light {
+	background-color: #e6e6e6;
+}
+.bg-grey-med-light {
+	background-color: #ccc;
+}
+.bg-grey-med-dark {
+	background-color: #bababa;
+}
+.bg-grey-dark {
+	background-color: #333;
+}
+.bg-white {
+	background-color: #fff;
+}
+
+/* FONTS ///////////////////////////////////////// */
+
+.fontRS {
+	font-family: 'Roboto Slab', serif;
+	letter-spacing: .025em;
+}
+.font300 {
+	font-weight: 300;
+}
+.font-tiny {
+	font-size: 12px;
+	line-height: 1em;
+	letter-spacing: .025em;
+}
+.font-xs {
+	font-size: 16px;
+	line-height: 1.2em;
+	letter-spacing: .025em;
+}
+.font-text {
+	font-size: 18px;
+	line-height: 1.375em;
+	letter-spacing: .01em;
+}
+.font-sm {
+	font-size: 24px;
+	line-height: 1.25em;
+}
+.font-md {
+	font-size: 28px;
+	line-height: 1.25em;
+	letter-spacing: .025em;
+}
+.font-lg {
+	font-size: 36px;
+	line-height: 1.1em;
+}
+.font-xlg {
+	font-size: 48px;
+	line-height: 1.05em;
+}
+.department-caption h2 {
+	font-size: 50px;
+}
+.font-icon-lg {
+	font-size: 32px;
+}
+.font-icon-jumbo {
+	font-size: 125px;
+	font-weight: 300;
+}
+
+.section-subheading.font-sm { /* so blue prologue text has more margin at the top of the page */
+	margin-top: 40px;
+	font-family: 'Roboto';
+}
+
+
+/* HOME-BUTTONS ///////////////////////////////////////// */
+
+#home-buttons {
+	margin-top: -1px;
+	padding-bottom: 32px;
+}
+#home-buttons .btn {
+	border-radius: 4px;
+	font-size: 32px;
+}
+
+/* SECTION HEADING ///////////////////////////////////////// */
+
+.sectionhead { /*used to create tab for sections*/
+	height: 68px;
+	width: 600px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-color: rgb(127,127,127);
+	background-color: rgba(0,0,0,0.3);
+	margin-bottom: 40px;
+}
+.section-head-text {
+	text-transform: uppercase;
+	font-weight: 300;
+	font-size: 48px;
+}
+/* home alerate ///////////*/
+
+#home-alert-msg {
+	color: white;
+	background-color: #e95b37;
+	font-size: 16px;
+	font-weight: normal;
+	border: none;
+}
+
+#home-alert-msg a,
+#home-alert-msg a:hover {
+	color: white;
+	text-decoration: underline;
+	padding-left: 4px;
+}
+
+#home-alert-msg .close {
+	text-shadow: none;
+	color: #404041;
+	opacity: 1;
+
+}
+
+/* SPOTLIGHT ///////////////////////////////////////// */
+
+#home-spotlight li.headline,
+#election-spotlight li.headline {
+	padding: 5%;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: .025em;
+	font-size: 28px;
+}
+#home-spotlight .col-xs-12.col-sm-6.col-md-3 li.headline,
+#election-spotlight .col-xs-12.col-sm-6.col-md-3 li.headline {
+	font-size: 20px;
+	line-height: 1.1em;
+}
+#home-spotlight,
+#election-spotlight {
+	padding-bottom: 10px;
+}
+#home-spotlight img,
+#election-spotlight img {
+	border-radius: 4px;
+}
+#home-spotlight a,
+#election-spotlight a {
+	font-weight: 400;
+}
+#election-spotlight a:hover {
+	color: #5ab3c4;
+}
+#home-spotlight .spotlight-double,
+#election-spotlight .spotlight-double {
+	margin-top: -5px;
+}
+#home-spotlight div.row.center-block,
+#election-spotlight div.row.center-block {
+	/* added 2/2017 to correctly align images with rest of page */
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+/* FISD MAIN NAVIGATION ///////////////////////////////////////// */
+/*
+.menu-shadow > div.col-sm-3, .megamenu .megamenu-content > .container > .row {
+	background-color: #bababa;
+}
+.menu-shadow {
+	border: 2px solid white;
+	border-top: none;
+}
+.search-input .search-input-box, .search-submit .search-submit-btn {
+	padding: 15px;
+*/
+.fisd-menu > ul, .fisd-menu > li {
+	font-weight: 400;
+	font-size: 18px;
+}
+.fisd-menu > li > a, .fisd-menu > li > a:hover, .fisd-menu .open > a, .fisd.menu .open > a:hover, .fisd-menu .open > a:focus {
+	padding: 21px 14px;
+}
+.fisd-menu {
+	margin-left: 40px;
+	margin-right: 25px;
+}
+.navbar .icon-nav, .navbar .icon-nav > li {
+	font-size: 30px;
+}
+.nav-twitter {
+	background: url("https://www.friscoisd.org/Sitefinity/WebsiteTemplates/bootstrap/App_Themes/bootstrap/Icons/icon-twitter-g.png");
+}
+.nav-facebook {
+	background: url("https://www.friscoisd.org/Sitefinity/WebsiteTemplates/bootstrap/App_Themes/bootstrap/Icons/icon-facebook-g.png");
+}
+.nav-youtube {
+	background: url("https://www.friscoisd.org/Sitefinity/WebsiteTemplates/bootstrap/App_Themes/bootstrap/Icons/icon-youtube-g.png");
+}
+.nav-instagram {
+	background: url("https://www.friscoisd.org/Sitefinity/WebsiteTemplates/bootstrap/App_Themes/bootstrap/Icons/icon-instagram-g.png");
+}
+.nav-twitter:hover {
+	background: url("https://www.friscoisd.org/Sitefinity/WebsiteTemplates/bootstrap/App_Themes/bootstrap/Icons/icon-twitter-w.png");
+}
+.nav-facebook:hover {
+	background: url("https://www.friscoisd.org/Sitefinity/WebsiteTemplates/bootstrap/App_Themes/bootstrap/Icons/icon-facebook-w.png");
+}
+.nav-youtube:hover {
+	background: url("https://www.friscoisd.org/Sitefinity/WebsiteTemplates/bootstrap/App_Themes/bootstrap/Icons/icon-youtube-w.png");
+}
+.nav-instagram:hover {
+	background: url("https://www.friscoisd.org/Sitefinity/WebsiteTemplates/bootstrap/App_Themes/bootstrap/Icons/icon-instagram-w.png");
+}
+.nav-twitter, .nav-facebook, .nav-youtube, .nav-instagram, .nav-twitter:hover, .nav-facebook:hover, .nav-youtube:hover, .nav-instagram:hover {
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	background-position: 0 15px;
+}
+.icon-nav > li > a, .icon-nav > li > a:hover, .icon-nav > li.dropdown.megamenu-fw.open a {
+	padding: 15px;
+	border-bottom: none;
+	margin-right: 10px;
+}
+.icon-nav > li > a#search-link, .icon-nav > li > a#search-link:hover, .icon-nav > li.dropdown.megamenu-fw.open a#search-link {
+	padding-right: 5px;
+	padding-top: 17px;
+}
+.site-search span.icon-search {
+	font-size: 28px;
+}
+.search-input .twitter-typeahead .tt-dropdown-menu {
+	padding-left: 10px;
+	padding-top: 10px;
+}
+.tt-dataset-search-terms, .tt-dataset-dept-keywords {
+	color: #666;
+}
+.tt-highlight {
+	color: #333;
+}
+.dept-sugg {
+	color: #333;
+}
+/*
+.icon-nav > li > a, .icon-nav > li > a:hover, .icon-nav > li.dropdown.megamenu-fw.open a {
+	padding: 14px 5px;
+}
+.icon-nav > li > a:hover, .icon-nav > li.dropdown.megamenu-fw.open a {
+	border-bottom: none;
+}
+*/
+.dropdown-menu > li > a, .megamenu-content a, .megamenu .dropdown-menu > li > a, .dropdown-header, .navbar-nav .open .dropdown-menu .dropdown-header, .navbar-nav .open .dropdown-menu > li > a {
+	text-transform: capitalize;
+}
+.dropdown-menu > li > a:hover, .megamenu-content a:hover, .megamenu .dropdown-menu > li > a:hover, .dropdown-menu > li > a:visited, .megamenu-content a:visited, .megamenu .dropdown-menu > li > a:visited, .dropdown-menu > li > a:active, .megamenu-content a:active, .megamenu .dropdown-menu > li > a:active {
+	text-decoration: none;
+	color: #333;
+}
+#about-nav-buttons a { /* 6/2017 to make about button text white */
+	color: white;
+}
+.campus-nav-tabs li:nth-of-type(2) {
+	margin-left: 108px;
+}
+.campus-nav-tabs li:nth-of-type(3) {
+	margin-left: 138px;
+}
+.campus-nav-tabs li:nth-of-type(4) {
+	margin-left: 153px;
+}
+.navbar, .navbar .navbar-nav > .active > a, .navbar .navbar-nav > .open > a, .navbar .navbar-nav > .open > a:hover, .navbar .navbar-nav > .open > a:focus {
+	background-color: #184366 !important;
+}
+#FooterWrapper {
+	background-color: #184366 !important;
+}
+ul.dropdown-menu.menu-shadow {
+    border-radius: 0 0 4px 4px; /* 12/5/15 changed from 0 */
+}
+ul.nav-campus-dd-list {
+    margin-bottom: 10px; /* 12/5/15 changed from 30px */
+}
+ul.dropdown-menu.menu-shadow a.btn.btn-danger.btn-block { /* 12/5/15 */
+    color: white;
+}
+.megamenu .megamenu-content > .container > .row {
+    background-color: rgba(255,255,255,.95); /* 7/2016 */
+}
+.menu-shadow > div.col-sm-3 {
+    background-color: transparent; /* 7/2016 */
+}
+.fisd-menu > li > a:hover, .fisd-menu .open > a, .fisd-menu .open > a:hover, .fisd-menu .open > a:focus {
+	border-color: rgba(255,255,255,.95); /* 7/2016 */
+}
+.dropdown-menu, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-color: rgba(255,255,255,.95); /* 7/2016 */
+}
+
+
+/* FISD FOOTER ///////////////////////////////////////// */
+
+#FooterWrapper {
+	padding-top: 34px;
+}
+.mission-footer .ourMission {
+	color: #5ab3c4;
+}
+.mission-footer p {
+	color: #e8b20f;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+.footer-address {
+	text-transform: uppercase;
+	margin: 0;
+}
+.footer-address p {
+	margin: 0;
+}
+.footer-address > div, .footer-address a, .footer-address a:hover, .footer-address a:active, .footer-address a:visited, address.text-right.footer-address {
+	font-size: 18px;
+}
+.mission-footer {
+	padding-bottom: 15px;
+}
+.copy-footer {
+	margin-top: 0;
+	padding-bottom: 20px;
+}
+.copy-footer p {
+	font-size: 10px;
+	padding-top: 8px;
+}
+.footer-address span.addressStreet, .footer-address span.addressCityState, .footer-address span.addressPhone {
+	padding-right: 10px;
+	border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+.footer-address span.addressCityState, .footer-address span.addressPhone, .footer-address span.addressFax {
+	padding-left: 6px;
+}
+.copy-footer span.footer-extra {
+	padding-left: 7px;
+}
+.copy-footer span.footer-extra a:hover {
+	color: #bababa;
+}
+
+
+/* SECTION NAV ///////////////////////////////////////// */
+
+.sectionnav { /* 3:2 ration with the sectionnavtext */
+	margin-bottom: 35px;
+	font-size: 36px;
+	font-weight: 300;
+}
+.sectionnav.sectionnav-sm {
+	margin-bottom: 35px;
+}
+.sectionnav a {
+	color: white;
+}
+.sectionnav a:nth-child(2):hover {
+	color: rgba(255,255,255,0.5);
+}
+.inactive-icon {
+	color: rgba(255,255,255,0.25);
+}
+.sectionnav a:active {
+	color: white;
+}
+.sectionnavtext, .icon-left, .icon-right {
+	display: inline;
+}
+.sectionnavtext {
+	font-size: 24px;
+	text-transform: uppercase;
+	vertical-align: middle;
+	letter-spacing: .025em;
+	margin-right: 9px;
+}
+.icon-left {
+	vertical-align: sub;
+	margin-left: 9px;
+}
+.icon-right {
+	vertical-align: sub;
+}
+
+
+/* EVENT-SMALL ///////////////////////////////////////// */
+
+.event-small {
+	width: 100%;
+	position: relative;
+}
+.event-small li.date {
+	line-height: 1.3em;
+	text-transform: uppercase;
+	font-size: 33px;
+	font-weight: 400;
+}
+.event-small span.event-month {
+	float: left;
+	width: 57%;
+	padding: 0 0 1% 5%;
+	border-radius: 4px 4px 0 0;
+}
+.event-small span.event-day {
+	text-align: center;
+	float: right;
+	width: 37%;
+	padding-bottom: 1%;
+	border-radius: 4px 4px 0 0;
+}
+.event-small li.details {
+	float: left;
+	font-size: 18px;
+	line-height: 1.25em;
+	height: 120px;
+	width: 100%;
+	padding: 5% 6%;
+}
+.event-small li.event-time, .event-time-ext {
+	float: left;
+	width: inherit;
+	text-transform: uppercase;
+	margin-right: auto;
+	margin-bottom: 15px;
+	border-radius: 0 0 2px 2px;
+	margin-top: -1px;
+}
+.event-time {
+	font-size: 15.5px;
+}
+.event-time-ext {
+	padding: 0 5% 4px;
+}
+.event-small li.event-time {
+	padding: 12px 5% 8px;
+}
+.event-time-ext p {
+	line-height: .6em;
+	text-transform: uppercase;
+	font-size: 15.5px;
+	margin: 0 0 10px;
+}
+
+
+/* NEWS ///////////////////////////////////////// */
+
+ul.news {
+	padding: 0;
+	margin: 0;
+	margin-bottom: 20px;
+	border-radius: 4px;
+}
+.news li.photo {
+	padding: 0;
+}
+.news .photo img {
+	border-radius: 4px 4px 0 0;
+}
+.news li.headline, .news li.date {
+	font-size: 26px;
+}
+.news li.headline {
+	padding: 5%;
+	height: 114px;
+	overflow: hidden;
+	line-height: 1.2em;
+}
+.news li.date {
+	margin: 5%;
+	float: left;
+	text-align: center;
+}
+.news span.story-month, .news span.story-day {
+	margin-bottom: 5px;
+}
+.news span.story-month, .news span.story-day, .news span.story-year {
+	display: block;
+	padding: .2em 0;
+	width: 1.9em;
+}
+.news li.lead {
+	padding: 3% 5.5% 5% 0;
+	height: 174px;
+	overflow: hidden;
+	margin-bottom: .75em;
+	font-size: 18px;
+	line-height: 1.325em;
+}
+.news li.read-more-news {
+	text-align: right;
+	padding: 0 5% 5%;
+}
+.news li.read-more-news .btn-lg {
+	text-transform: uppercase;
+	border-radius: 0;
+	padding: .5em .8em .6em;
+	margin-top: 0;
+}
+.read-more-news .btn-success:hover {
+	color: white;
+	background-color: #0e987d;
+}
+
+.read-more-news .btn-danger:hover {
+	color: white;
+	background-color: #e95b37;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* THE BEAT /////////////////////////////////////////  ADDED 4/10/15 */
+
+#thebeat {
+	padding: 40px 0 20px;
+}
+#thebeat h3.section-subheading {
+	letter-spacing: 0.025em;
+	margin-top: 15px;
+}
+
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media (max-width: 1199px) { /* MEDIUM - - - Kindle, iPad - - - width: 1024 */
+
+
+	.icon-nav > li > a, .icon-nav > li > a:hover, .icon-nav > li.dropdown.megamenu-fw.open a {
+		padding: 10px;
+	}
+	.sectionhead {
+		height: 60px;
+	}
+	.section-head-text {
+		font-size: 42px;
+	}
+
+
+/* FONTS ///////////////////////////////////////// */
+
+	.font-sm {
+		font-size: 21px;
+	}
+	.font-text {
+		font-size: 16px;
+	}
+
+/* FISD PHOTO HEADER ///////////////////////////////////////// */
+
+	.carousel-indicators {
+		bottom: -3px;
+	}
+
+/* SPOTLIGHT ///////////////////////////////////////// */
+
+	#home-spotlight li.headline,
+	#election-spotlight li.headline {
+		font-size: 24px;
+	}
+	#home-spotlight,
+	#election-spotlight {
+		padding-bottom: 10px;
+	}
+	#home-spotlight .spotlight-double,
+	#election-spotlight .spotlight-double {
+	  margin-top: -9px;
+	}
+
+/* FISD FOOTER ///////////////////////////////////////// */
+
+	.mission-footer {
+		padding-top: 8px;
+		padding-bottom: 18px;
+	}
+	.mission-footer p {
+		font-size: 40px;
+	}
+	.address.text-right.footer-address {
+		font-size: 13px;
+	}
+	.copy-footer {
+		margin-top: 0;
+	}
+
+/* FISD MAIN NAVIGATION ///////////////////////////////////////// */
+
+	.navbar-brand img {
+		padding-top: 0;
+		max-width: 190%;
+		margin-left: -151px;
+		margin-top: -14px;
+	}
+	.fisd-menu {
+		margin-right: 66px;
+	}
+	.campus-nav-tabs li:nth-of-type(2) {
+		margin-left: 56px;
+	}
+	.campus-nav-tabs li:nth-of-type(3) {
+		margin-left: 90px;
+	}
+	.campus-nav-tabs li:nth-of-type(4) {
+		margin-left: 103px;
+	}
+
+/* EVENT-SMALL //////////////////////////////// */
+
+	#home-events .row > div {
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+	.event-small li.date {
+		font-size: 29px;
+	}
+	.event-small li.details {
+		font-size: 16px;
+		height: 100px;
+	}
+	.event-small li.event-time {
+		padding: 12px 5% 7px;
+	}
+	.event-time, .event-time-ext p {
+		font-size: 13.5px;
+	}
+	.event-time-ext {
+		padding: 0 5% 3px;
+	}
+
+/* NEWS //////////////////////////////// */
+
+	.news li.headline, .news li.date {
+		font-size: 21px;
+	}
+	.news li.headline {
+		height: 92px;
+	}
+	.news li.lead {
+		height: 144px;
+		font-size: 15px;
+	}
+
+}
+
+@media (max-width: 991px) /* SMALL - - - because of side nav being dropped at this break, most elements will remain unchanged */ {
+
+/* FONTS ///////////////////////////////////////// */
+
+	.font-text {
+		line-height: 1.25em;
+	}
+	.font-sm {
+		line-height: 1.111em;
+		}
+	.font-md {
+		font-size: 16px;
+		line-height: 1.136em;
+	}
+	.font-lg {
+		font-size: 26px;
+		line-height: 1.154em;
+	}
+	.font-xlg {
+		font-size: 32px;
+		line-height: 1.1em;
+	}
+	.department-caption h2 {
+	font-size: 34px;
+	}
+
+/* SECTIONS ///////////////////////////////////////// */
+
+	.sectionhead {
+		height: 47px;
+		width: 340px;
+	}
+	.section-head-text {
+		font-size: 32px;
+	}
+
+/* HOME-BUTTONS ///////////////////////////////////////// */
+
+	#home-buttons .btn {
+		font-size: 24px;
+	}
+
+/* EVENT-SMALL //////////////////////////////// */
+
+	#home-events .row {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	#home-events .row > div {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.event-small li.details {
+		font-size: 17px;
+		height: 105px;
+	}
+	.event-time, .event-time-ext p {
+		font-size: 14px;
+	}
+
+/* FISD FOOTER ///////////////////////////////////////// */
+
+	.footer-address > div, .footer-address a, .footer-address a:hover, .footer-address a:active, .footer-address a:visited, address.text-right.footer-address {
+		font-size: 14px;
+	}
+	.mission-footer {
+		padding-top: 6px;
+		padding-bottom: 16px;
+	}
+	.mission-footer p {
+		padding-bottom: 15px;
+		font-size: 32px;
+	}
+	.copy-footer {
+		margin-left: 0;
+		margin-top: 5px;
+	}
+	.footer-address {
+		margin: 0;
+	}
+	.footer-address p {
+		font-size: 14px;
+		font-weight: 300;
+		margin: 0;
+	}
+
+/* NEWS //////////////////////////////// */
+
+	#home-districtnews .row, #home-insidefrisco .row {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.news li.headline {
+		height: 100px;
+		font-size: 23px;
+	}
+	.news li.lead {
+		height: 159px;
+		font-size: 16px;
+	}
+
+/* FISD NAVIGATION //////////////////////////////// */
+
+	.fisd-menu {
+		margin-left: 18px;
+		margin-right: 9px;
+	}
+	.navbar > .container .navbar-brand {
+		width: 94px;
+	}
+	.fisd-menu > li > a, .fisd-menu > li > a:hover, .fisd-menu .open > a, .fisd.menu .open > a:hover, .fisd-menu .open > a:focus {
+		padding: 23px 14px;
+	}
+	.navbar-brand img {
+	max-width: 280%;
+	margin-left: -4px;
+	margin-top: 0;
+	}
+	.fisd-menu > li {
+		font-size: 16px;
+	}
+	.campus-nav-tabs li:nth-of-type(2) {
+		margin-left: 30px;
+	}
+	.campus-nav-tabs li:nth-of-type(3) {
+		margin-left: 54px;
+	}
+	.campus-nav-tabs li:nth-of-type(4) {
+		margin-left: 66px;
+	}
+	.navbar-header img {
+		margin-left: 0;
+		width: 115px;
+	}
+
+	/* FISD SUB NAVIGATION TEMP ///////////////////////////////////////// */
+
+	.dept-nav {
+		padding-top: 0;
+	}
+	.dept-nav-panel:focus {
+		outline: none;
+	}
+	.dept-nav-sub {
+		margin: 0;
+	}
+	div.row.row-content.jobs.col-xs-12.active {
+		padding-left: 7px;
+	}
+	a.dept-menu-title {
+		padding: 19px 50px 19px 17px;
+	}
+	.dept-menu-title > .caret {
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-top: 15px solid #333;
+		margin-top: 4px;
+		margin-right: -30px;
+	}
+	.selected-job-cat > .caret {
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-top: 15px solid white;
+		margin-top: 4px;
+		margin-right: -20px;
+	}
+	.dept-nav ul li a, .dept-nav ul li a:link, .dept-nav ul li a:visited, .dept-nav ul li a:active {
+		padding: 15px 18px 5px 30px;
+	}
+	a.dept-menu-title:hover {
+		color: #333;
+	}
+	.panel-title {
+		color: #333;
+		font-family: 'Roboto';
+	}
+	.dept-nav-sub .panel-title a {
+		font-size: 20px;
+		padding: 10px 40px 10px 18px;
+	}
+
+
+	#home-spotlight .spotlight-double,
+	#election-spotlight .spotlight-double {
+	  margin-top: 4px;
+	}
+
+
+
+}
+
+
+@media (max-width: 767px) { /* EXTRA SMALL - - - Motorola Droid Razr - - - width: 720 */
+
+
+	.sectionhead {
+		height: 55px;
+		width: 430px;
+	}
+	.section-head-text {
+		padding-top: 5px;
+	}
+
+
+/* FONTS ///////////////////////////////////////// */
+
+	.font-sm {
+		line-height: 1.111em;
+		font-size: 18px;
+		}
+
+/* CAROUSEL ///////////////////////////////////////// */
+
+	#carousel-default .icon-right, #carousel-default .icon-left  {
+		font-size: 60px;
+		vertical-align: middle;
+		color: rgba(255, 255, 255, 0.5);
+	}
+	.carousel-control a, .carousel-control a:hover, .carousel-control a:active, .carousel-control a:visited, .carousel-control, .carousel-control.left, .carousel-control.right	{
+		padding-top: 15.5%;
+	}
+	.carousel-control > .icon-arrow-left {
+		margin-left: 9.5%;
+	}
+	.jumbotron img {
+		border-bottom: none;
+	}
+	#carousel-default .icon-arrow-left::before {
+		content: "U";
+		font-size: 48px;
+	}
+	#carousel-default .icon-arrow-right::before {
+		content: "V";
+		font-size: 48px;
+	}
+
+/* BUTTONS ///////////////////////////////////////// */
+
+	.btn-primary:hover, #home-buttons .btn-primary:hover {
+	background-color: #184366;
+	}
+	.btn-success:hover, #home-buttons .btn-success:hover {
+	background-color: #0e987d;
+	}
+	.btn-info:hover, #home-buttons .btn-info:hover {
+	background-color: #5ab3c4;
+	}
+	.btn-warning:hover, #home-buttons .btn-warning:hover {
+	background-color: #e8b20f;
+	}
+	a.btn:hover {
+	color: white;
+	}
+	.btn-danger:hover, #home-buttons .btn-danger:hover {
+	background-color: #e95b37;
+	}
+
+/* HOME-BUTTONS ///////////////////////////////////////// */
+
+	#home-buttons .btn {
+		font-size: 32px;
+	}
+	#home-buttons .row {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+/* SPOTLIGHT ///////////////////////////////////////// */
+
+	#home-spotlight li.headline,
+	#election-spotlight li.headline {
+		font-size: 28px;
+	}
+
+/* FISD FOOTER ///////////////////////////////////////// */
+
+	.footer-address > div, .footer-address a, .footer-address a:hover, .footer-address a:active, .footer-address a:visited, .footer-address p {
+		font-size: 12px;
+	}
+	.mission-footer {
+		display: inherit;
+		padding-top: 23px;
+	}
+	.mission-footer p {
+		font-size: 30px;
+		padding-left: 60px;
+		padding-right: 60px;
+	}
+	.col-xs-12 .copy-footer {
+		float: inherit;
+	}
+	.copy-footer {
+		margin-top: 0;
+	}
+	.copy-footer p, .footer-address {
+		padding-left: 0;
+		text-align: center;
+	}
+
+/* FISD NAVIGATION //////////////////////////////// */
+
+	button.navbar-toggle, button.navbar-toggle:focus, button.navbar-toggle:hover {
+		margin-top: 14px;
+	}
+	.fisd-menu > li > a, .fisd-menu > li > a:hover, .fisd-menu .open > a, .fisd.menu .open > a:hover, .fisd-menu .open > a:focus {
+		padding: 4px 0;
+	}
+	.navbar-header img {
+		margin-left: -10px;
+		width: 220px;
+		padding-top: 7px;
+	}
+
+/* FISD SUB NAVIGATION TEMP ///////////////////////////////////////// */
+
+	a.dept-menu-title {
+		font-size: 20px;
+	}
+
+/* EVENT-SMALL //////////////////////////////// */
+
+	.event-small li.date {
+		font-size: 38px;
+	}
+	.event-small li.details {
+		font-size: 23px;
+		height: 140px;
+		margin-top: -1px;
+	}
+	.event-small li.event-time {
+		padding: 16px 5% 13px;
+		margin-top: -1px;
+	}
+	.event-time, .event-time-ext p {
+		font-size: 19px;
+	}
+	.event-time-ext {
+		padding: 3px 5% 11px;
+		margin-top: -1px;
+	}
+	#home-events .row {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	#home-events .row > div {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+
+
+/* NEWS //////////////////////////////// */
+
+	#home-districtnews .row, #home-insidefrisco .row {
+		padding-left: 22.5%;
+		padding-right: 22.5%;
+	}
+	.news li.headline, .news li.date {
+		font-size: 24px;
+	}
+	.news li.headline {
+		height: 104px;
+	}
+	.news li.lead {
+		height: 165px;
+		font-size: 17px;
+	}
+	.news span.story-month, .news span.story-day, .news span.story-year {
+		width: 1.9em;
+	}
+
+
+}
+
+
+@media (max-width: 650px) { /* no specific devices */
+
+/* SPOTLIGHT ///////////////////////////////////////// */
+
+
+/* EVENT-SMALL //////////////////////////////// */
+
+	.event-small li.date {
+		font-size: 38px;
+	}
+	.event-small li.details {
+		font-size: 23px;
+	}
+	.event-time, .event-time-ext p {
+		font-size: 19px;
+	}
+	#home-events .row {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	#home-events .row > div {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+
+/* NEWS //////////////////////////////// */
+
+	#home-districtnews .row, #home-insidefrisco .row {
+		padding-left: 15%;
+		padding-right: 15%;
+	}
+
+/* FISD FOOTER ///////////////////////////////////////// */
+
+	.mission-footer p {
+		font-size: 30px;
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+	#FooterWrapper .col-xs-12 {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+/* SECTION NAV //////////////////////////////// */
+
+
+
+}
+
+@media (max-width: 550px) { /* Motorola Droid Razr - - - width: 720 */
+
+
+	.carousel-control a, .carousel-control a:hover, .carousel-control a:active, .carousel-control a:visited, .carousel-control, .carousel-control.left, .carousel-control.right	{
+		padding-top: 14.5%;
+	}
+	.carousel-control > .icon-arrow-left {
+		margin-left: 23%;
+	}
+
+/* FISD FOOTER ///////////////////////////////////////// */
+
+	#home-buttons .btn {
+		font-size: 28px;
+	}
+
+/* FISD FOOTER ///////////////////////////////////////// */
+
+	#FooterWrapper .row {
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+	.mission-footer {
+		padding: 0;
+	}
+	.mission-footer p {
+		font-size: 26px;
+		padding: 15px 0 20px;
+	}
+	.footer-address {
+		margin-left: 28px;
+		margin-right: 28px;
+	}
+	.footer-address > div, .footer-address a, .footer-address a:hover, .footer-address a:active, .footer-address a:visited, address.text-right.footer-address, .footer-address p {
+		font-size: 15px;
+	}
+	.copy-footer p {
+		font-size: 8px;
+		padding-top: 15px;
+	}
+	.footer-address span.addressCityState {
+		border-right: none;
+		padding-right: 0;
+	}
+	.footer-address span.addressPhone {
+		padding-left: 0;
+	}
+	span.addressPhone {
+		display: inline-block;
+	}
+
+
+/* EVENT-SMALL //////////////////////////////// */
+
+	.event-small li.date {
+		font-size: 33px;
+	}
+	.event-small li.details {
+		font-size: 19px;
+		height: 112px;
+	}
+ 	.event-time, .event-time-ext p {
+ 		font-size: 16px;
+ 	}
+ 	.event-small li.event-time {
+ 		padding: 19px 5% 10px;
+ 	}
+ 	.event-time-ext {
+ 		padding: 6px 5% 7px;
+ 	}
+ 	#home-events .row {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	#home-events .row > div {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+/* NEWS ///////////////////////////////////////// */
+
+	.news li.headline {
+		height: 113px;
+	}
+	.news li.headline, .news li.date {
+		font-size: 26px;
+	}
+	.news li.lead {
+		height: 175px;
+		font-size: 18px;
+	}
+	#home-districtnews .row, #home-insidefrisco .row {
+		padding-left: 60px;
+		padding-right: 60px;
+	}
+
+/* SECTION NAV //////////////////////////////// */
+
+	.sectionnav {
+		font-size: 33px;
+	}
+	.sectionnavtext {
+		font-size: 22px;
+	}
+
+	.sectionnavtext {
+		margin-right: 8px;
+	}
+	.sectionnav .icon-left {
+		margin-left: 8px;
+	}
+}
+
+
+@media (max-width: 500px) { /* Sony Xperia Sola - - - width: 480 */
+
+
+	.carousel-control a, .carousel-control a:hover, .carousel-control a:active, .carousel-control a:visited, .carousel-control, .carousel-control.left, .carousel-control.right	{
+		padding-top: 14%;
+	}
+
+
+	.caption-desc {
+		width: 100%;
+	}
+
+	#FooterWrapper .row {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+	.mission-footer p {
+		font-size: 24px;
+	}
+	.footer-address {
+		margin-right: 25px;
+		margin-left: 25px;
+	}
+	.copy-footer p {
+		font-size: 10px;
+	}
+ 	#home-events .row {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	#home-districtnews .row, #home-insidefrisco .row {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	.sectionhead {
+		width: 360px;
+	}
+
+}
+
+
+
+@media (max-width: 450px) { /* Samsung Galaxy Note - - - width: 400, iPhone 6 plus - - - width: 414, LG Optimus - - - width: 424 */
+
+
+	#home-events .row,
+	#home-districtnews .row,
+	#home-insidefrisco .row,
+	#home-spotlight .row.center-block,
+	#election-spotlight .row.center-block {
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+
+	.carousel-control a, .carousel-control a:hover, .carousel-control a:active, .carousel-control a:visited, .carousel-control, .carousel-control.left, .carousel-control.right	{
+		padding-top: 13%;
+	}
+
+
+/* BUTTONS ///////////////////////////////////////// */
+
+	#home-buttons .btn {
+		font-size: 20px;
+	}
+
+/* SECTION HEADING ///////////////////////////////////////// */
+
+	.sectionhead { /*used to create tab for sections*/
+		height: 47px;
+		width: 260px;
+		margin-bottom: 40px;
+	}
+	.section-head-text {
+		font-size: 24px;
+		padding-top: 6px;
+	}
+
+/* SPOTLIGHT ///////////////////////////////////////// */
+
+	#home-spotlight li.headline,
+	#election-spotlight li.headline {
+		font-size: 21px;
+	}
+
+/* FISD FOOTER ///////////////////////////////////////// */
+
+	#FooterWrapper .row {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.mission-footer p {
+		font-size: 21px;
+		padding-top: 15px;
+		padding-bottom: 25px;
+	}
+	.footer-address > div, .footer-address a, .footer-address a:hover, .footer-address a:active, .footer-address a:visited, address.text-right.footer-address, .footer-address p {
+		font-size: 13px;
+	}
+	.footer-address {
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+
+
+/* FONTS ///////////////////////////////////////// */
+
+	.font-lg {
+		font-size: 23px;
+	}
+	.font-xlg {
+		font-size: 28px;
+	}
+	.department-caption h2 {
+	font-size: 30px;
+	}
+
+/* EVENT-SMALL //////////////////////////////// */
+
+	#home-events .row > div {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.event-small li.date {
+		font-size: 25px;
+	}
+	.event-small span.event-month {
+		padding-left: 7px;
+	}
+	.event-small li.details {
+		font-size: 15px;
+		height: 90px;
+	}
+	.event-small li.event-time {
+		padding: 10px 5% 7px;
+	}
+	.event-small li.event-time, .event-time-ext p {
+		font-size: 12px;
+	}
+	.event-time-ext p {
+		line-height: .4em;
+	}
+	.event-time-ext {
+		padding: 2px 5% 4px;
+	}
+
+/* SECTION NAV //////////////////////////////// */
+
+	.sectionnav {
+		font-size: 27px;
+	}
+	.sectionnavtext {
+		font-size: 18px;
+	}
+	.sectionnavtext {
+		margin-right: 6px;
+	}
+	.sectionnav .icon-left {
+		margin-left: 6px;
+	}
+
+
+/* NEWS ///////////////////////////////////////// */
+
+	.news li.headline {
+		height: 85px;
+	}
+	.news li.headline, .news li.date {
+		font-size: 19px;
+	}
+	.news li.lead {
+		height: 130px;
+		font-size: 13px;
+		padding: 3% 5.5% 5% 0;
+	}
+	.news li.date {
+		margin: 4% 5% 5%;
+	}
+
+
+}
+
+
+@media (max-width: 390px) { /* Blackberry Z10 - - - width: 384, Blackberry Z30 - - - width: 360, iPhone 6 - - - width: 375 */
+
+
+	#home-events .row,
+	#home-districtnews .row,
+	#home-insidefrisco .row,
+	#home-spotlight .row.center-block,
+	#election-spotlight .row.center-block {
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+
+	.carousel-control a, .carousel-control a:hover, .carousel-control a:active, .carousel-control a:visited, .carousel-control, .carousel-control.left, .carousel-control.right	{
+		padding-top: 12.5%;
+	}
+	.carousel-control > .icon-arrow-left {
+		margin-left: 22%;
+	}
+
+/* EVENTS ///////////////////////////////////////// */
+
+	#home-events .col-xs-12 {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+/* NEWS ///////////////////////////////////////// */
+
+	.news li.headline {
+		height: 83px;
+	}
+
+	#FooterWrapper .row {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.mission-footer p {
+		font-size: 27px;
+		padding-top: 0;
+		padding-bottom: 10px;
+	}
+	.footer-address p {
+		font-size: 12px;
+	}
+	.copy-footer p {
+		padding-top: 17px;
+		font-size: 8px;
+	}
+}
+
+@media (max-width: 350px) { /* iPhone 3-5 - - - width: 320 */
+
+	.font-tiny {
+		font-size: 8px;
+	}
+	#home-districtnews .row,
+	#home-insidefrisco .row,
+	#home-spotlight .row.center-block,
+	#election-spotlight .row.center-block {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	#home-spotlight li.headline,
+	#election-spotlight li.headline {
+		font-size: 18px;
+	}
+	#home-buttons .btn,
+	#election-buttons .btn {
+		font-size: 18px;
+	}
+	#home-buttons .col-xs-6.col-sm-3,
+	#election-buttons .col-xs-6.col-sm-3 {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.carousel-control a, .carousel-control a:hover, .carousel-control a:active, .carousel-control a:visited, .carousel-control, .carousel-control.left, .carousel-control.right	{
+		padding-top: 11.5%;
+	}
+	.carousel-control > .icon-arrow-left {
+		margin-left: 11%;
+	}
+
+	.sectionnav {
+		font-size: 24px;
+	}
+	.sectionnavtext {
+		font-size: 16px;
+	}
+
+	#home-events .row > div {
+		padding-left: 7.5px;
+		padding-right: 7.5px;
+	}
+
+	.news li.headline {
+		height: 50px;
+		font-size: 15px;
+	}
+	.news li.lead {
+		height: 98px;
+		font-size: 12px;
+	}
+	.news li.date {
+		font-size: 14px;
+	}
+
+	.footer-address {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.footer-address p {
+		font-size: 12px;
+	}
+	.copy-footer p {
+		padding-top: 15px;
+	}
+}
